@@ -33,7 +33,7 @@ const FormSchema = z.object({
         }),
 })
 
-const page = () => {
+const SendMsgPage = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const params = useParams<{ username: string }>();
 
@@ -109,4 +109,4 @@ const page = () => {
     )
 }
 
-export default page;
+export default SendMsgPage;

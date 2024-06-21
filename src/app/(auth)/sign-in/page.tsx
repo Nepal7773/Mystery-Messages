@@ -16,7 +16,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
-const page = () => {
+const SignInPage = () => {
     const router = useRouter();
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -140,4 +140,4 @@ const page = () => {
     )
 }
 
-export default page
+export default SignInPage

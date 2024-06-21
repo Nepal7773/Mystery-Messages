@@ -18,7 +18,7 @@ import { Loader2 } from "lucide-react"
 // import { signInSchema } from "@/schemas/signInSchema"
 
 
-const page = () => {
+const SignUpPage = () => {
     const [username, setUsername] = useState('');
     const [usernameMessage, setUsernameMessage] = useState('');
     const [isCheckingUsername, setIsCheckingUsername] = useState(false);
@@ -176,4 +176,4 @@ const page = () => {
     )
 }
 
-export default page
+export default SignUpPage
