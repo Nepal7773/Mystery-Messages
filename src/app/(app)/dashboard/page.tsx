@@ -116,7 +116,7 @@ const DashboardPage = () => {
     const username = session?.user?.username;
 
     //TODO : do more reasearch on this
-    const baseUrl = `${window.location.protocol}//${window.location.host}`;
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     const profileUrl = `${baseUrl}/u/${username}`;
 
     const copyToClipboard = () => {
