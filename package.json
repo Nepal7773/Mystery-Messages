@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.29",
+    "@google/generative-ai": "^0.14.1",
     "@hookform/resolvers": "^3.6.0",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-label": "^2.0.2",
@@ -29,6 +30,7 @@
     "mongoose": "^8.4.1",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
+    "nextjs-toploader": "^1.6.12",
     "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
