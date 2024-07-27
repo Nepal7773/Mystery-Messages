@@ -9,21 +9,13 @@ const UsernameQuerySchema = z.object({
 })
 
 export async function GET(request: NextRequest) {
-    await dbConnect();
-
+    const queryParam = {
+        username: request.nextUrl.searchParams.get('username') || ''
+    }
     try {
-        // const { searchParams } = new URL(request.url);
-        // console.log("first")
-        // const queryParam = {
-        //     username: searchParams.get("username")
-        // }
-        const queryParam = {
-            username: request.nextUrl.href.split("?")[1].split("=")[1]
-        }
         //validate with zod
         const result = UsernameQuerySchema.safeParse(queryParam);
         // console.log(result); // remove after checking
-
         if (!result.success) {
             const usernameErrors = result.error.format().username?._errors || [];
             return Response.json({
@@ -31,6 +23,7 @@ export async function GET(request: NextRequest) {
                 message: usernameErrors?.length > 0 ? usernameErrors.join(", ") : "Invalid query Params"
             }, { status: 400 });
         }
+        await dbConnect();
 
         const { username } = result.data;
         const exitingVerifiedUser = await UserModel.findOne({ username, isVerified: true })
