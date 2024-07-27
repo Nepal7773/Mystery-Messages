@@ -13,7 +13,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import axios, { AxiosError } from 'axios';
 import { Loader2, RefreshCcw } from 'lucide-react';
 // import { set } from 'mongoose';
-import { User } from 'next-auth';
+// import { User } from 'next-auth';
 import { useSession } from 'next-auth/react';
 import { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
@@ -54,7 +54,7 @@ const DashboardPage = () => {
         } finally {
             setIsSwitchLoading(false);
         }
-    }, [setValue])
+    }, [setValue, toast])
 
     const fetchMessages = useCallback(async (refresh: boolean = false) => {
         setIsLoading(true);
@@ -79,7 +79,7 @@ const DashboardPage = () => {
             setIsLoading(false);
             setIsSwitchLoading(false);
         }
-    }, [setIsLoading, setMessages])
+    }, [setIsLoading, setMessages, toast])
 
     useEffect(() => {
         if (!session || !session.user) return
